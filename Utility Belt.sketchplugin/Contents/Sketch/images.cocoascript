@@ -1,0 +1,20 @@
+@import "_utilitybelt.js"
+
+var url_to_image_fill = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  var url = [doc askForUserInput:"Enter image URL:" initialValue:""];
+
+  if ([selection count] > 0) {
+    for (x = 0; x < [selection count]; x++) {
+      var layer = [selection objectAtIndex:x];
+      var layerClass = [layer className];
+      if (layerClass == "MSShapeGroup") {
+        UtilityBelt.images.setImageURLasFill(layer,url);
+      }
+    }
+    UtilityBelt.utils.reloadInspector(doc);
+  }
+};

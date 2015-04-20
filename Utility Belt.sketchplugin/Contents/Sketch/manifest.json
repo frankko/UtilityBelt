@@ -1,0 +1,29 @@
+{
+	"author" : "Frank Kolodziej",
+  "commands" : [
+    {
+      "script" : "images.cocoascript",
+      "handler" : "url_to_image_fill",
+      "shortcut" : "",
+      "name" : "URL to Image Fill",
+      "identifier" : "UBimages-urltoimagefill"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      {
+        "items": [
+          "UBimages-urltoimagefill"
+        ],
+        "title": "Images"
+      }
+    ],
+    "title" : "★ Utility Belt"
+  },
+  "identifier" : "io.kolo.sketch.utility-belt",
+  "compatibleVersion": "3.3",
+  "version" : "1.0",
+  "description" : "An always-expanding collection of simple, focused plugins for Sketch.",
+  "authorEmail" : "frank@kolo.io",
+  "name" : "Utility Belt"
+}
