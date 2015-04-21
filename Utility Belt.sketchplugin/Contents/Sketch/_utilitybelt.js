@@ -28,14 +28,9 @@ var UtilityBelt = {
       [fill setPatternFillType:1];
     },
     "setImageURLasFill": function(layer,url) {
-      var layerWidth = [[layer frame] width];
       var imageData = UtilityBelt.network.getURL(url);
       var img = [[NSImage alloc] initWithData:imageData];
-      var fill = layer.style().fills().firstObject();
-      var coll = layer.style().fills().firstObject().documentData().images();
-      [fill setPatternImage:img collection:coll]
-      [fill setFillType:4];
-      [fill setPatternFillType:1];
+      UtilityBelt.image.setImageAsFill(layer,img);
     }
   },
   "network": {

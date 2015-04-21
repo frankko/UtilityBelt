@@ -1,0 +1,49 @@
+@import "_utilitybelt.js"
+
+var move_selected_to_x_y = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  var minX, minY;
+  var allX = [], allY = [];
+
+  if ([selection count] > 0) {
+    for (x = 0; x < [selection count]; x++) {
+      var layer = [selection objectAtIndex:x];
+      var layerX = parseFloat([[layer frame] x]);
+      var layerY = parseFloat([[layer frame] y]);
+
+      allX.push(layerX);
+      allY.push(layerY);
+    }
+
+    allX.sort(function(a,b){return a-b});
+    allY.sort(function(a,b){return a-b});
+
+    minX = allX[0];
+    minY = allY[0];
+
+    var newXY = [doc askForUserInput:"Enter new x,y:" initialValue:minX + ',' + minY];
+    var newCoords = newXY.split(',');
+
+    if (isNaN(newCoords[0]) || isNaN(newCoords[1])) {
+      var app = [NSApplication sharedApplication];
+      [app displayDialog:"Canceling. Enter coordinates in format “x,y”" withTitle:"Move Selection…"];
+    } else {
+      var newX = parseFloat(newCoords[0]);
+      var newY = parseFloat(newCoords[1]);
+
+      for (x = 0; x < [selection count]; x++) {
+        var layer = [selection objectAtIndex:x];
+        var layerX = parseFloat([[layer frame] x]);
+        var layerY = parseFloat([[layer frame] y]);
+        var layerNewX = newX + layerX - minX;
+        var layerNewY = newY + layerY - minY;
+
+        [[layer frame] setX:layerNewX];
+        [[layer frame] setY:layerNewY];
+      }
+    }
+  }
+};
