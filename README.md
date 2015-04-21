@@ -1,6 +1,6 @@
 # ★ Utility Belt
 
-An always-expanding collection of small, simple, focused plugins for Sketch.
+An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 
 ## Image →
 

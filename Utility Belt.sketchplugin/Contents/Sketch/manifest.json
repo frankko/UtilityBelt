@@ -44,7 +44,7 @@
   "identifier" : "io.kolo.sketch.utility-belt",
   "compatibleVersion": "3.3",
   "version" : "0.1",
-  "description" : "An always-expanding collection of simple, focused plugins for Sketch.",
+  "description" : "An always-expanding collection of small, simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"
 }
