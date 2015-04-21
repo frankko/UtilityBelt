@@ -3,9 +3,16 @@
   "commands" : [
     {
       "script" : "images.cocoascript",
+      "handler" : "clipboard_image_to_image_fill",
+      "shortcut" : "",
+      "name" : "Image (Clipboard) to Layer Pattern Fill",
+      "identifier" : "UBimages-clipboardtoimagefill"
+    },
+    {
+      "script" : "images.cocoascript",
       "handler" : "url_to_image_fill",
       "shortcut" : "",
-      "name" : "URL to Image Fill",
+      "name" : "Image (URL) to Layer Pattern Fill",
       "identifier" : "UBimages-urltoimagefill"
     }
   ],
@@ -13,6 +20,7 @@
     "items" : [
       {
         "items": [
+          "UBimages-clipboardtoimagefill",
           "UBimages-urltoimagefill"
         ],
         "title": "Images"
@@ -22,7 +30,7 @@
   },
   "identifier" : "io.kolo.sketch.utility-belt",
   "compatibleVersion": "3.3",
-  "version" : "1.0",
+  "version" : "0.1",
   "description" : "An always-expanding collection of simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"
