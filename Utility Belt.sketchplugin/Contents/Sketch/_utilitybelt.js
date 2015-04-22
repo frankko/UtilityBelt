@@ -44,7 +44,43 @@ var UtilityBelt = {
       return response;
     }
   },
+  "select": {
+    "selectSimilarColorBorder": function(context,target,hexValue) {
+      var doc = context.document;
+      var scope = [target children];
+      var predicate = NSPredicate.predicateWithFormat("style.border.color.hexValue == %@",hexValue);
+      var queryResult = scope.filteredArrayUsingPredicate(predicate);
+
+      if ([queryResult count] > 1) {
+        [[doc currentPage] deselectAllLayers];
+        [target selectLayers:queryResult];
+      } else {
+        UtilityBelt.util.displayMessage(doc,"No similar layers (border color) found.");
+      }
+    },
+    "selectSimilarColorFill": function(context,target,hexValue) {
+      var doc = context.document;
+      var scope = [target children];
+      var predicate = NSPredicate.predicateWithFormat("style.fill.color.hexValue == %@",hexValue);
+      var queryResult = scope.filteredArrayUsingPredicate(predicate);
+
+      if ([queryResult count] > 1) {
+        [[doc currentPage] deselectAllLayers];
+        [target selectLayers:queryResult];
+      } else {
+        UtilityBelt.util.displayMessage(doc,"No similar layers (fill color) found.");
+      }
+    }
+  },
   "util": {
+    "displayAlert": function(title,text) {
+      var app = [NSApplication sharedApplication];
+      [app displayDialog:text withTitle:title];
+    },
+    "displayMessage": function(doc,text) {
+      log(text);
+      [doc showMessage:text];
+    },
     "dumpObj": function(obj) {
       log("#####################################################################################")
       log("## Dumping object " + obj )

@@ -1,0 +1,28 @@
+@import "_utilitybelt.js"
+
+var select_similar_color_border = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  if ([selection count] > 0) {
+    var hexValue = [[[[[selection objectAtIndex:0] style] border] color] hexValue];
+    UtilityBelt.select.selectSimilarColorBorder(context,page,hexValue);
+  } else {
+    UtilityBelt.util.displayAlert("Select Similar…","Canceling. Please select a layer first.");
+  }
+};
+
+var select_similar_color_fill = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  if ([selection count] > 0) {
+    var hexValue = [[[[[selection objectAtIndex:0] style] fill] color] hexValue];
+    UtilityBelt.select.selectSimilarColorFill(context,page,hexValue);
+  } else {
+    UtilityBelt.util.displayAlert("Select Similar…","Canceling. Please select a layer first.");
+  }
+};
+

@@ -21,6 +21,20 @@
       "shortcut" : "",
       "name" : "Move Selected Layers to [x,y]",
       "identifier" : "UBMove-moveselectedtoxy"
+    },
+    {
+      "script" : "select.cocoascript",
+      "handler" : "select_similar_color_border",
+      "shortcut" : "",
+      "name" : "Select Similar Color Border",
+      "identifier" : "UBSelect-selectsimilarcolorborder"
+    },
+    {
+      "script" : "select.cocoascript",
+      "handler" : "select_similar_color_fill",
+      "shortcut" : "",
+      "name" : "Select Similar Color Fill",
+      "identifier" : "UBSelect-selectsimilarcolorfill"
     }
   ],
   "menu" : {
@@ -37,6 +51,13 @@
           "UBMove-moveselectedtoxy"
         ],
         "title": "Move"
+      },
+      {
+        "items": [
+          "UBSelect-selectsimilarcolorborder",
+          "UBSelect-selectsimilarcolorfill"
+        ],
+        "title": "Select"
       }
     ],
     "title" : "★ Utility Belt"

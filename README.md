@@ -11,3 +11,8 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 ## Move →
 
 * `Move Selected Layers to [x,y]`: prompts the user for new x,y coordinates and moves the selected objects to those new coordinates, _preserving each object's relative position_.
+
+## Select →
+
+* `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
+* `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer
