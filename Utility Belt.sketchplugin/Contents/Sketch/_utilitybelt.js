@@ -77,8 +77,11 @@ var UtilityBelt = {
       var app = [NSApplication sharedApplication];
       [app displayDialog:text withTitle:title];
     },
+    "displayPrompt": function(doc,text,initialValue) {
+      var capturedInput = [doc askForUserInput:text initialValue:initialValue];
+      return capturedInput;
+    },
     "displayMessage": function(doc,text) {
-      log(text);
       [doc showMessage:text];
     },
     "dumpObj": function(obj) {
@@ -112,6 +115,24 @@ var UtilityBelt = {
     },
     "reloadInspector": function(doc) {
       [doc reloadInspector];
+    },
+    "sanitizeHexValue": function(hexValue) {
+      hexValue = hexValue.replace("#","");
+      hexValue = hexValue.toUpperCase();
+
+      hexValueLength = hexValue.length;
+
+      if (hexValueLength == 3) {
+        var hexR = hexValue.substr(0,1);
+        var hexG = hexValue.substr(1,1);
+        var hexB = hexValue.substr(2,1);
+        hexValue = hexR + hexR + hexG + hexG + hexB + hexB;
+      } else if (hexValueLength == 6) {
+      } else {
+        hexValue = hexValue.substr(0,6);
+      }
+
+      return hexValue;
     },
     "sendAction": function(context,commandToPerform) {
       var doc = context.document;

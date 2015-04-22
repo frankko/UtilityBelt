@@ -7,10 +7,11 @@ var select_similar_color_border = function(context) {
 
   if ([selection count] > 0) {
     var hexValue = [[[[[selection objectAtIndex:0] style] border] color] hexValue];
-    UtilityBelt.select.selectSimilarColorBorder(context,page,hexValue);
   } else {
-    UtilityBelt.util.displayAlert("Select Similar…","Canceling. Please select a layer first.");
+    var hexValue = UtilityBelt.util.displayPrompt(doc,"Enter a hex value…","");
   }
+  hexValue = UtilityBelt.util.sanitizeHexValue(hexValue);
+  UtilityBelt.select.selectSimilarColorBorder(context,page,hexValue);
 };
 
 var select_similar_color_fill = function(context) {
@@ -19,10 +20,16 @@ var select_similar_color_fill = function(context) {
   var selection = context.selection;
 
   if ([selection count] > 0) {
-    var hexValue = [[[[[selection objectAtIndex:0] style] fill] color] hexValue];
-    UtilityBelt.select.selectSimilarColorFill(context,page,hexValue);
+    var selected = [selection objectAtIndex:0];
+    if ([selected className] == "MSTextLayer") {
+      var hexValue = [[selected textColor] hexValue];
+    } else {
+      var hexValue = [[[[selected style] fill] color] hexValue];
+    }
   } else {
-    UtilityBelt.util.displayAlert("Select Similar…","Canceling. Please select a layer first.");
+    var hexValue = UtilityBelt.util.displayPrompt(doc,"Enter a hex value…","");
   }
+  hexValue = UtilityBelt.util.sanitizeHexValue(hexValue);
+  UtilityBelt.select.selectSimilarColorFill(context,page,hexValue);
 };
 

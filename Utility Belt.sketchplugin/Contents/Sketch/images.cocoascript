@@ -26,7 +26,7 @@ var url_to_image_fill = function(context) {
   var page = [doc currentPage];
   var selection = context.selection;
 
-  var url = [doc askForUserInput:"Enter image URL:" initialValue:""];
+  var url = UtilityBelt.util.displayPrompt(doc,"Enter image URL:","");
 
   if ([selection count] > 0) {
     for (x = 0; x < [selection count]; x++) {
