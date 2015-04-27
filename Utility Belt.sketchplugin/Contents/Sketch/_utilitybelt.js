@@ -33,6 +33,40 @@ var UtilityBelt = {
       UtilityBelt.image.setImageAsFill(layer,img);
     }
   },
+  "layer": {
+    "getRect": function(selection) {
+      var allLeft = [], allTop = [];
+      var allRight = [], allBottom = [];
+
+      var loop = [selection objectEnumerator];
+      while (layer = [loop nextObject]) {
+        var layerX = parseFloat([[layer frame] x]);
+        var layerY = parseFloat([[layer frame] y]);
+        var layerR = parseFloat(layerX + [[layer frame] width]);
+        var layerB = parseFloat(layerY + [[layer frame] height]);
+
+        allLeft.push(layerX);
+        allTop.push(layerY);
+        allRight.push(layerR);
+        allBottom.push(layerB);
+      }
+
+      allLeft.sort(function(a,b){return a-b});
+      allTop.sort(function(a,b){return a-b});
+
+      allRight.sort(function(a,b){return b-a});
+      allBottom.sort(function(a,b){return b-a});
+
+      var returnObj = {
+        top:allTop[0],
+        right:allRight[0],
+        bottom:allBottom[0],
+        left:allLeft[0]
+      };
+
+      return returnObj;
+    }
+  },
   "network": {
     "getJSON": function(url) {
       var response = UtilityBelt.network.getURL(url);

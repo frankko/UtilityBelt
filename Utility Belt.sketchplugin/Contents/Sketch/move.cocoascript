@@ -7,22 +7,10 @@ var move_selected_to_x_y = function(context) {
 
   if ([selection count] > 0) {
     var minX, minY;
-    var allX = [], allY = [];
+    var layersRect = UtilityBelt.layer.getRect(selection);
 
-    var loop = [selection objectEnumerator];
-    while (layer = [loop nextObject]) {
-      var layerX = parseFloat([[layer frame] x]);
-      var layerY = parseFloat([[layer frame] y]);
-
-      allX.push(layerX);
-      allY.push(layerY);
-    }
-
-    allX.sort(function(a,b){return a-b});
-    allY.sort(function(a,b){return a-b});
-
-    minX = allX[0];
-    minY = allY[0];
+    minX = layersRect.left;
+    minY = layersRect.top;
 
     var newXY = [doc askForUserInput:"Enter new x,y:" initialValue:minX + ',' + minY];
     var newCoords = newXY.split(',');
