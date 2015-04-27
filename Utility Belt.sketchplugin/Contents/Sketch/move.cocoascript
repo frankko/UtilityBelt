@@ -5,12 +5,12 @@ var move_selected_to_x_y = function(context) {
   var page = [doc currentPage];
   var selection = context.selection;
 
-  var minX, minY;
-  var allX = [], allY = [];
-
   if ([selection count] > 0) {
-    for (x = 0; x < [selection count]; x++) {
-      var layer = [selection objectAtIndex:x];
+    var minX, minY;
+    var allX = [], allY = [];
+
+    var loop = [selection objectEnumerator];
+    while (layer = [loop nextObject]) {
       var layerX = parseFloat([[layer frame] x]);
       var layerY = parseFloat([[layer frame] y]);
 
@@ -33,8 +33,8 @@ var move_selected_to_x_y = function(context) {
       var newX = parseFloat(newCoords[0]);
       var newY = parseFloat(newCoords[1]);
 
-      for (x = 0; x < [selection count]; x++) {
-        var layer = [selection objectAtIndex:x];
+      var loop = [selection objectEnumerator];
+      while (layer = [loop nextObject]) {
         var layerX = parseFloat([[layer frame] x]);
         var layerY = parseFloat([[layer frame] y]);
         var layerNewX = newX + layerX - minX;
