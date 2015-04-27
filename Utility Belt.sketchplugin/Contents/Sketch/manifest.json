@@ -2,18 +2,18 @@
 	"author" : "Frank Kolodziej",
   "commands" : [
     {
-      "script" : "images.cocoascript",
+      "script" : "image.cocoascript",
       "handler" : "clipboard_image_to_image_fill",
       "shortcut" : "",
       "name" : "Image (Clipboard) to Layer Pattern Fill",
-      "identifier" : "UBimages-clipboardtoimagefill"
+      "identifier" : "UBImage-clipboardtoimagefill"
     },
     {
-      "script" : "images.cocoascript",
+      "script" : "image.cocoascript",
       "handler" : "url_to_image_fill",
       "shortcut" : "",
       "name" : "Image (URL) to Layer Pattern Fill",
-      "identifier" : "UBimages-urltoimagefill"
+      "identifier" : "UBImage-urltoimagefill"
     },
     {
       "script" : "move.cocoascript",
@@ -41,8 +41,8 @@
     "items" : [
       {
         "items": [
-          "UBimages-clipboardtoimagefill",
-          "UBimages-urltoimagefill"
+          "UBImage-clipboardtoimagefill",
+          "UBImage-urltoimagefill"
         ],
         "title": "Image"
       },

@@ -35,8 +35,10 @@ var UtilityBelt = {
   },
   "layer": {
     "getRect": function(selection) {
-      var allLeft = [], allTop = [];
-      var allRight = [], allBottom = [];
+      var allLeft = [],
+          allTop = [],
+          allRight = [],
+          allBottom = [];
 
       var loop = [selection objectEnumerator];
       while (layer = [loop nextObject]) {
