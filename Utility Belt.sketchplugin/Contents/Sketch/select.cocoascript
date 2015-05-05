@@ -1,5 +1,35 @@
 @import "_utilitybelt.js"
 
+var select_layers_by_name = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var findString = UtilityBelt.util.displayPrompt(doc,"Enter text to find in a layer name…","");
+
+  if (findString != '') {
+//    if (findString.match(/^\/.+\/[a-z]+$/)) {
+//      var find = new RegExp(findString);
+//    } else {
+      var find = findString.toLowerCase();
+//    }
+
+    var allLayers = [page children];
+    var matchedLayers = [];
+    var loop = [allLayers objectEnumerator];
+    while (layer = [loop nextObject]) {
+      var layerName = [layer name].toLowerCase();
+      if (layerName.match(find)) {
+        matchedLayers.push(layer);
+      }
+    }
+
+    if (matchedLayers.length > 0) {
+      log(matchedLayers);
+      [page deselectAllLayers];
+      [page selectLayers:matchedLayers];
+    }
+  }
+};
+
 var select_similar_color_border = function(context) {
   var doc = context.document;
   var page = [doc currentPage];

@@ -24,6 +24,13 @@
     },
     {
       "script" : "select.cocoascript",
+      "handler" : "select_layers_by_name",
+      "shortcut" : "",
+      "name" : "Select Layers by Name",
+      "identifier" : "UBSelect-selectlayersbyname"
+    },
+    {
+      "script" : "select.cocoascript",
       "handler" : "select_similar_color_border",
       "shortcut" : "",
       "name" : "Select Similar Color Border",
@@ -54,6 +61,7 @@
       },
       {
         "items": [
+          "UBSelect-selectlayersbyname",
           "UBSelect-selectsimilarcolorborder",
           "UBSelect-selectsimilarcolorfill"
         ],

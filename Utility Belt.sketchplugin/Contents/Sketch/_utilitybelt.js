@@ -1,4 +1,12 @@
 var UtilityBelt = {
+  "array": {
+    "arrayUnique": function(a) {
+      return a.reduce(function(p, c) {
+        if (p.indexOf(c) < 0) p.push(c);
+        return p;
+      }, []);
+    }
+  },
   "artboard": {
     "getCurrentArtboard": function(obj,page) {
       while ([obj parentGroup] != page) {

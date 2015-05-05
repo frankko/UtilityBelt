@@ -14,5 +14,6 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 
 ## Select →
 
+* `Select Layers by Name`: takes a user-inputted string and selects all artboards, layer groups, and/or layers that contain that string
 * `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
 * `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer
