@@ -21,16 +21,7 @@ var move_selected_to_x_y = function(context) {
       var newX = parseFloat(newCoords[0]);
       var newY = parseFloat(newCoords[1]);
 
-      var loop = [selection objectEnumerator];
-      while (layer = [loop nextObject]) {
-        var layerX = parseFloat([[layer frame] x]);
-        var layerY = parseFloat([[layer frame] y]);
-        var layerNewX = newX + layerX - minX;
-        var layerNewY = newY + layerY - minY;
-
-        [[layer frame] setX:layerNewX];
-        [[layer frame] setY:layerNewY];
-      }
+      UtilityBelt.layer.moveLayersToXY(selection,newX,newY);
     }
   }
 };

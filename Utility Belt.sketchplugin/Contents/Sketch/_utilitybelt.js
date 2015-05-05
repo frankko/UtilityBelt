@@ -75,6 +75,24 @@ var UtilityBelt = {
       };
 
       return returnObj;
+    },
+    "moveLayersToXY": function(layers,newX,newY) {
+      var minX, minY;
+      var layersRect = UtilityBelt.layer.getRect(layers);
+
+      minX = layersRect.left;
+      minY = layersRect.top;
+
+      var loop = [layers objectEnumerator];
+      while (layer = [loop nextObject]) {
+        var layerX = parseFloat([[layer frame] x]);
+        var layerY = parseFloat([[layer frame] y]);
+        var layerNewX = newX + layerX - minX;
+        var layerNewY = newY + layerY - minY;
+
+        [[layer frame] setX:layerNewX];
+        [[layer frame] setY:layerNewY];
+      }
     }
   },
   "network": {
