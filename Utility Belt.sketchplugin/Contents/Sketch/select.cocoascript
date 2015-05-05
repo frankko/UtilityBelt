@@ -23,7 +23,6 @@ var select_layers_by_name = function(context) {
     }
 
     if (matchedLayers.length > 0) {
-      log(matchedLayers);
       [page deselectAllLayers];
       [page selectLayers:matchedLayers];
     }
