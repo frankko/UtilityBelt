@@ -2,6 +2,13 @@
 	"author" : "Frank Kolodziej",
   "commands" : [
     {
+      "script" : "font.cocoascript",
+      "handler" : "list_all_fonts",
+      "shortcut" : "",
+      "name" : "List all Fonts",
+      "identifier" : "UBFont-listallfonts"
+    },
+    {
       "script" : "image.cocoascript",
       "handler" : "clipboard_image_to_image_fill",
       "shortcut" : "",
@@ -14,6 +21,34 @@
       "shortcut" : "",
       "name" : "Image (URL) to Layer Pattern Fill",
       "identifier" : "UBImage-urltoimagefill"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "remove_all_guides_from_artboard",
+      "shortcut" : "",
+      "name" : "Remove Guides from Selected Artboard",
+      "identifier" : "UBguide-removeallguidesfromartboard"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_guides_horizontal",
+      "shortcut" : "",
+      "name" : "Selected Layer to Guides (Horizontal)",
+      "identifier" : "UBguide-selectedtoguideshorizontal"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_guides_vertical",
+      "shortcut" : "",
+      "name" : "Selected Layer to Guides (Vertical)",
+      "identifier" : "UBguide-selectedtoguidesvertical"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_guides",
+      "shortcut" : "",
+      "name" : "Selected Layer to Guides (Both)",
+      "identifier" : "UBguide-selectedtoguides"
     },
     {
       "script" : "move.cocoascript",
@@ -48,10 +83,25 @@
     "items" : [
       {
         "items": [
+          "UBFont-listallfonts"
+        ],
+        "title": "Font"
+      },
+      {
+        "items": [
           "UBImage-clipboardtoimagefill",
           "UBImage-urltoimagefill"
         ],
         "title": "Image"
+      },
+      {
+        "items": [
+          "UBguide-selectedtoguideshorizontal",
+          "UBguide-selectedtoguidesvertical",
+          "UBguide-selectedtoguides",
+          "UBguide-removeallguidesfromartboard"
+        ],
+        "title": "Guide"
       },
       {
         "items": [

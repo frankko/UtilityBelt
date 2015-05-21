@@ -15,6 +15,26 @@ var UtilityBelt = {
       return obj;
     }
   },
+  "guide": {
+    "addGuide": function(artboard,dir,val) {
+      if (dir == "h") {
+        var rulerData = [artboard verticalRulerData];
+      } else {
+        var rulerData = [artboard horizontalRulerData];
+      }
+      [rulerData addGuideWithValue:val];
+    },
+    "removeGuidesFromArtboard": function(artboard) {
+      var rulerDataH = [artboard horizontalRulerData];
+      while ([rulerDataH numberOfGuides] > 0) {
+        [rulerDataH removeGuideAtIndex:0];
+      }
+      var rulerDataV = [artboard verticalRulerData];
+      while ([rulerDataV numberOfGuides] > 0) {
+        [rulerDataV removeGuideAtIndex:0];
+      }
+    }
+  },
   "image": {
     "getImageFromClipboard": function() {
       var pasteBoard = [NSPasteboard generalPasteboard];

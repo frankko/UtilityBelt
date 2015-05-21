@@ -1,0 +1,24 @@
+@import "_utilitybelt.js"
+
+var list_all_fonts = function(context) {
+  var doc = context.document;
+  var pages = [doc pages]
+  var foundFonts = [];
+
+  var loop = [pages objectEnumerator];
+  while (page = [loop nextObject]) {
+    var scope = [page children];
+    var predicate = NSPredicate.predicateWithFormat("className == %@",'MSTextLayer');
+    var queryResult = scope.filteredArrayUsingPredicate(predicate);
+    if ([queryResult count] > 0) {
+      var loop2 = [queryResult objectEnumerator];
+      while (textLayer = [loop2 nextObject]) {
+        foundFonts.push([textLayer fontPostscriptName]);
+      }
+    }
+  }
+  foundFonts = UtilityBelt.array.arrayUnique(foundFonts);
+  foundFonts = foundFonts.sort();
+  var fontString = foundFonts.join("\n");
+  UtilityBelt.util.displayAlert('Fonts in Use',fontString);
+};

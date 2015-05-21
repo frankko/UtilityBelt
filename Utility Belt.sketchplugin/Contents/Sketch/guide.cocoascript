@@ -1,0 +1,72 @@
+@import "_utilitybelt.js"
+
+var selected_to_guides = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frame];
+
+      var guideT = parseInt([frame y]);
+      UtilityBelt.guide.addGuide(artboard,'h',guideT);
+      var guideB = parseInt([frame maxY]);
+      UtilityBelt.guide.addGuide(artboard,'h',guideB);
+
+      var guideL = parseInt([frame x]);
+      UtilityBelt.guide.addGuide(artboard,'v',guideL);
+      var guideR = parseInt([frame maxX]);
+      UtilityBelt.guide.addGuide(artboard,'v',guideR);
+    }
+  }
+};
+
+var selected_to_guides_horizontal = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frame];
+      var guideT = parseInt([frame y]);
+      UtilityBelt.guide.addGuide(artboard,'h',guideT);
+      var guideB = parseInt([frame maxY]);
+      UtilityBelt.guide.addGuide(artboard,'h',guideB);
+    }
+  }
+};
+
+var selected_to_guides_vertical = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frame];
+      var guideL = parseInt([frame x]);
+      UtilityBelt.guide.addGuide(artboard,'v',guideL);
+      var guideR = parseInt([frame maxX]);
+      UtilityBelt.guide.addGuide(artboard,'v',guideR);
+    }
+  }
+};
+
+var remove_all_guides_from_artboard = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      UtilityBelt.guide.removeGuidesFromArtboard(artboard);
+    }
+  }
+};
