@@ -13,15 +13,17 @@ var move_selected_to_x_y = function(context) {
     minY = layersRect.top;
 
     var newXY = [doc askForUserInput:"Enter new x,y:" initialValue:minX + ',' + minY];
-    var newCoords = newXY.split(',');
+    if (newXY) {
+      var newCoords = newXY.split(',');
 
-    if (isNaN(newCoords[0]) || isNaN(newCoords[1])) {
-      UtilityBelt.util.displayAlert("Move Selection…","Canceling. Enter coordinates in format “x,y”");
-    } else {
-      var newX = parseFloat(newCoords[0]);
-      var newY = parseFloat(newCoords[1]);
+      if (isNaN(newCoords[0]) || isNaN(newCoords[1])) {
+        UtilityBelt.util.displayAlert("Move Selection…","Canceling. Enter coordinates in format “x,y”");
+      } else {
+        var newX = parseFloat(newCoords[0]);
+        var newY = parseFloat(newCoords[1]);
 
-      UtilityBelt.layer.moveLayersToXY(selection,newX,newY);
+        UtilityBelt.layer.moveLayersToXY(selection,newX,newY);
+      }
     }
   }
 };
