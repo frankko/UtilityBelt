@@ -8,16 +8,16 @@ var selected_to_guides = function(context) {
     var loop = [selection objectEnumerator];
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
-      var frame = [obj frame];
+      var frame = [obj frameInArtboard];
 
-      var guideT = parseInt([frame y]);
+      var guideT = frame.origin.y
       UtilityBelt.guide.addGuide(artboard,'h',guideT);
-      var guideB = parseInt([frame maxY]);
+      var guideB = frame.origin.y + frame.size.height
       UtilityBelt.guide.addGuide(artboard,'h',guideB);
 
-      var guideL = parseInt([frame x]);
+      var guideL = frame.origin.x
       UtilityBelt.guide.addGuide(artboard,'v',guideL);
-      var guideR = parseInt([frame maxX]);
+      var guideR = frame.origin.x + frame.size.width
       UtilityBelt.guide.addGuide(artboard,'v',guideR);
     }
   }
@@ -31,10 +31,10 @@ var selected_to_guides_horizontal = function(context) {
     var loop = [selection objectEnumerator];
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
-      var frame = [obj frame];
-      var guideT = parseInt([frame y]);
+      var frame = [obj frameInArtboard];
+      var guideT = frame.origin.y
       UtilityBelt.guide.addGuide(artboard,'h',guideT);
-      var guideB = parseInt([frame maxY]);
+      var guideB = frame.origin.y + frame.size.height
       UtilityBelt.guide.addGuide(artboard,'h',guideB);
     }
   }
@@ -48,10 +48,10 @@ var selected_to_guides_vertical = function(context) {
     var loop = [selection objectEnumerator];
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
-      var frame = [obj frame];
-      var guideL = parseInt([frame x]);
+      var frame = [obj frameInArtboard];
+      var guideL = frame.origin.x
       UtilityBelt.guide.addGuide(artboard,'v',guideL);
-      var guideR = parseInt([frame maxX]);
+      var guideR = frame.origin.x + frame.size.width
       UtilityBelt.guide.addGuide(artboard,'v',guideR);
     }
   }

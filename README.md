@@ -9,11 +9,8 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 ## Guide →
 
 * `Selected Layer to Guides (Horizontal)`: draws horizontal guides along the top and bottom edges of the selected object(s).
-  * [WARNING: a little wonky when running on an object within a layer group. Will fix ASAP.]
 * `Selected Layer to Guides (Vertical)`: draws vertical guides along the left and right edges of the selected object(s).
-  * [WARNING: a little wonky when running on an object within a layer group. Will fix ASAP.]
 * `Selected Layer to Guides (Both)`: draws both horizontal and vertical guides along all four sides of the selected object(s).
-  * [WARNING: a little wonky when running on an object within a layer group. Will fix ASAP.]
 * `Remove Guides from Selected Artboard`: removes all guides from the selected artboard
 
 ## Image →
