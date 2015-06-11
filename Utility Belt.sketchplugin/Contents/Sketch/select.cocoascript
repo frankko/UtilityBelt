@@ -1,7 +1,26 @@
 @import "_utilitybelt.js"
 
+var select_layers_by_font_name = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+
+  var fontName = UtilityBelt.util.displayPrompt(doc,"Enter a font PostScript name…","");
+
+  log(fontName);
+
+  var scope = [page children];
+  var predicate = NSPredicate.predicateWithFormat("fontPostscriptName == %@",fontName);
+  var queryResult = scope.filteredArrayUsingPredicate(predicate);
+  log(queryResult);
+  if ([queryResult count] > 0) {
+    [page deselectAllLayers];
+    [page selectLayers:queryResult];
+  }
+};
+
 var select_layers_by_name = function(context) {
   var doc = context.document;
+  var selection = context.selection;
   var page = [doc currentPage];
   var findString = UtilityBelt.util.displayPrompt(doc,"Enter text to find in a layer name…","");
 
@@ -12,10 +31,26 @@ var select_layers_by_name = function(context) {
       var find = findString.toLowerCase();
 //    }
 
-    var allLayers = [page children];
+    var allLayersTMP = [];
+
+    if ([selection count] > 0) {
+      var loop = [selection objectEnumerator];
+      while (layer = [loop nextObject]) {
+        if ([layer children]) {
+          allLayersTMP.push([layer children]);
+        } else {
+          allLayersTMP.push(layer);
+        }
+      }
+    } else {
+        allLayersTMP.push([page children]);
+    }
+
+    var allLayers = UtilityBelt.array.arrayFlatten(allLayersTMP);
     var matchedLayers = [];
-    var loop = [allLayers objectEnumerator];
-    while (layer = [loop nextObject]) {
+
+    for (var x = 0; x < allLayers.length; x++) {
+      var layer = allLayers[x];
       var layerName = [layer name].toLowerCase();
       if (layerName.match(find)) {
         matchedLayers.push(layer);

@@ -26,5 +26,6 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 ## Select →
 
 * `Select Layers by Name`: takes a user-inputted string and selects all artboards, layer groups, and/or layers that contain that string
+* `Select Layers by Font Name`: enter a font's PostScript family name and this will select all text layers in the current page matching the inputted font (use `Font → List all Fonts` to get a list of all document fonts.)
 * `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
 * `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer

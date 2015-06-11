@@ -66,6 +66,13 @@
     },
     {
       "script" : "select.cocoascript",
+      "handler" : "select_layers_by_font_name",
+      "shortcut" : "",
+      "name" : "Select Layers by Font Name",
+      "identifier" : "UBSelect-selectlayersbyfontname"
+    },
+    {
+      "script" : "select.cocoascript",
       "handler" : "select_similar_color_border",
       "shortcut" : "",
       "name" : "Select Similar Color Border",
@@ -112,6 +119,7 @@
       {
         "items": [
           "UBSelect-selectlayersbyname",
+          "UBSelect-selectlayersbyfontname",
           "UBSelect-selectsimilarcolorborder",
           "UBSelect-selectsimilarcolorfill"
         ],

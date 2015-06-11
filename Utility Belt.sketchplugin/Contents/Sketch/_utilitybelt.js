@@ -1,5 +1,17 @@
 var UtilityBelt = {
   "array": {
+    "arrayFlatten": function(arr) {
+      var flattened = [];
+      if (arr.length > 0) {
+        for (var x = 0; x < arr.length; x++) {
+          var arrX = arr[x];
+          for (var y = 0; y < [arrX count]; y++) {
+            flattened.push(arrX[y]);
+          }
+        }
+      }
+      return flattened;
+    },
     "arrayUnique": function(a) {
       return a.reduce(function(p, c) {
         if (p.indexOf(c) < 0) p.push(c);
