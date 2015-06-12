@@ -6,15 +6,15 @@ var select_layers_by_font_name = function(context) {
 
   var fontName = UtilityBelt.util.displayPrompt(doc,"Enter a font PostScript name…","");
 
-  log(fontName);
-
-  var scope = [page children];
-  var predicate = NSPredicate.predicateWithFormat("fontPostscriptName == %@",fontName);
-  var queryResult = scope.filteredArrayUsingPredicate(predicate);
-  log(queryResult);
-  if ([queryResult count] > 0) {
-    [page deselectAllLayers];
-    [page selectLayers:queryResult];
+  if (fontName != '') {
+    var scope = [page children];
+    var predicate = NSPredicate.predicateWithFormat("fontPostscriptName == %@",fontName);
+    var queryResult = scope.filteredArrayUsingPredicate(predicate);
+    log(queryResult);
+    if ([queryResult count] > 0) {
+      [page deselectAllLayers];
+      [page selectLayers:queryResult];
+    }
   }
 };
 
