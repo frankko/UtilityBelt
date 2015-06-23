@@ -51,6 +51,27 @@
       "identifier" : "UBguide-selectedtoguides"
     },
     {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_center_guides_horizontal",
+      "shortcut" : "",
+      "name" : "Selected Layer to Center Guide (Horizontal)",
+      "identifier" : "UBguide-selectedtocenterguideshorizontal"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_center_guides_vertical",
+      "shortcut" : "",
+      "name" : "Selected Layer to Center Guide (Vertical)",
+      "identifier" : "UBguide-selectedtocenterguidesvertical"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "selected_to_center_guides",
+      "shortcut" : "",
+      "name" : "Selected Layer to Center Guide (Both)",
+      "identifier" : "UBguide-selectedtocenterguides"
+    },
+    {
       "script" : "move.cocoascript",
       "handler" : "move_selected_to_x_y",
       "shortcut" : "",
@@ -106,6 +127,9 @@
           "UBguide-selectedtoguideshorizontal",
           "UBguide-selectedtoguidesvertical",
           "UBguide-selectedtoguides",
+          "UBguide-selectedtocenterguideshorizontal",
+          "UBguide-selectedtocenterguidesvertical",
+          "UBguide-selectedtocenterguides",
           "UBguide-removeallguidesfromartboard"
         ],
         "title": "Guide"

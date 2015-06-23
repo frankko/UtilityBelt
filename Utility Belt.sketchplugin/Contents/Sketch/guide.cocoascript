@@ -1,5 +1,55 @@
 @import "_utilitybelt.js"
 
+var selected_to_center_guides = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frameInArtboard];
+
+      var guideCH = frame.origin.y + (frame.size.height / 2);
+      UtilityBelt.guide.addGuide(artboard,'h',guideCH);
+
+      var guideCV = frame.origin.x + (frame.size.width / 2);
+      UtilityBelt.guide.addGuide(artboard,'v',guideCV);
+    }
+  }
+};
+var selected_to_center_guides_horizontal = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frameInArtboard];
+
+      var guideCH = frame.origin.y + (frame.size.height / 2);
+      UtilityBelt.guide.addGuide(artboard,'h',guideCH);
+    }
+  }
+};
+var selected_to_center_guides_vertical = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var loop = [selection objectEnumerator];
+    while (obj = [loop nextObject]) {
+      var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
+      var frame = [obj frameInArtboard];
+
+      var guideCV = frame.origin.x + (frame.size.width / 2);
+      UtilityBelt.guide.addGuide(artboard,'v',guideCV);
+    }
+  }
+};
+
+
 var selected_to_guides = function(context) {
   var doc = context.document;
   var page = [doc currentPage];
