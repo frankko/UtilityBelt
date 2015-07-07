@@ -24,6 +24,9 @@ var UtilityBelt = {
       while ([obj parentGroup] != page) {
         obj = [obj parentGroup];
       }
+      if ([obj className] != "MSArtboardGroup") {
+        obj = page;
+      }
       return obj;
     }
   },
