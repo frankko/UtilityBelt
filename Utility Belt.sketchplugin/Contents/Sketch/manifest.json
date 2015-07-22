@@ -72,6 +72,20 @@
       "identifier" : "UBguide-selectedtocenterguides"
     },
     {
+      "script" : "guide.cocoascript",
+      "handler" : "new_guide_at_y",
+      "shortcut" : "",
+      "name" : "New Horizontal Guide at…",
+      "identifier" : "UBguide-newguideaty"
+    },
+    {
+      "script" : "guide.cocoascript",
+      "handler" : "new_guide_at_x",
+      "shortcut" : "",
+      "name" : "New Vertical Guide at…",
+      "identifier" : "UBguide-newguideatx"
+    },
+    {
       "script" : "move.cocoascript",
       "handler" : "move_selected_to_x_y",
       "shortcut" : "",
@@ -124,6 +138,8 @@
       },
       {
         "items": [
+          "UBguide-newguideaty",
+          "UBguide-newguideatx",
           "UBguide-selectedtoguideshorizontal",
           "UBguide-selectedtoguidesvertical",
           "UBguide-selectedtoguides",

@@ -8,6 +8,8 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 
 ## Guide →
 
+* `New Horizontal Guide at…`: prompts a user for a location to create a horizontal guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
+* `New Vertical Guide at…`: prompts a user for a location to create a vertical guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
 * `Selected Layer to Guides (Horizontal)`: draws horizontal guides along the top and bottom edges of the selected object(s).
 * `Selected Layer to Guides (Vertical)`: draws vertical guides along the left and right edges of the selected object(s).
 * `Selected Layer to Guides (Both)`: draws both horizontal and vertical guides along all four sides of the selected object(s).

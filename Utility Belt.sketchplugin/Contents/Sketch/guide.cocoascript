@@ -1,5 +1,29 @@
 @import "_utilitybelt.js"
 
+var new_guide_at_x = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var artboard = UtilityBelt.artboard.getCurrentArtboard([selection objectAtIndex:0],page);
+    var guideX = [doc askForUserInput:"Create new vertical guide at:" initialValue:"0"];
+    if (guideX) {
+      UtilityBelt.guide.addGuide(artboard,'v',guideX);
+    }
+  }
+};
+var new_guide_at_y = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+  if ([selection count] > 0) {
+    var artboard = UtilityBelt.artboard.getCurrentArtboard([selection objectAtIndex:0],page);
+    var guideY = [doc askForUserInput:"Create new horizontal guide at:" initialValue:"0"];
+    if (guideY) {
+      UtilityBelt.guide.addGuide(artboard,'h',guideY);
+    }
+  }
+};
 var selected_to_center_guides = function(context) {
   var doc = context.document;
   var page = [doc currentPage];
