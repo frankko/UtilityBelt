@@ -63,7 +63,6 @@ var UtilityBelt = {
       }
     },
     "setImageAsFill": function(layer,img) {
-      var layerWidth = [[layer frame] width];
       var fill = layer.style().fills().firstObject();
       var coll = layer.style().fills().firstObject().documentData().images();
       [fill setPatternImage:img collection:coll]
