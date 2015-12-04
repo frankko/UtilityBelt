@@ -34,3 +34,14 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3.
 * `Select Layers by Font Name`: enter a font's PostScript family name and this will select all text layers in the current page matching the inputted font (use `Font → List all Fonts` to get a list of all document fonts.)
 * `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
 * `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer
+
+* * * 
+
+### Who?
+
+I’m Frank Kolodziej, a New York City-based freelance designer & developer. I am [available for hire](http://kolo.io/).
+
+#### Other Plugins
+
+- [Place Linked Bitmap](https://github.com/frankko/Place-Linked-Bitmap): A plugin to place external bitmap files into Sketch and update Sketch layers after external bitmaps are updated
+- [Artboard Tools](https://github.com/frankko/Artboard-Tools): Plugins for arranging artboards and navigating between artboards.
