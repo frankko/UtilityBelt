@@ -140,12 +140,12 @@
         "items": [
           "UBguide-newguideaty",
           "UBguide-newguideatx",
+          "UBguide-selectedtoguides",
           "UBguide-selectedtoguideshorizontal",
           "UBguide-selectedtoguidesvertical",
-          "UBguide-selectedtoguides",
+          "UBguide-selectedtocenterguides",
           "UBguide-selectedtocenterguideshorizontal",
           "UBguide-selectedtocenterguidesvertical",
-          "UBguide-selectedtocenterguides",
           "UBguide-removeallguidesfromartboard"
         ],
         "title": "Guide"
@@ -170,7 +170,7 @@
   },
   "identifier" : "io.kolo.sketch.utility-belt",
   "compatibleVersion": "3.3",
-  "version" : "0.1",
+  "version" : "1.0",
   "description" : "An always-expanding collection of small, simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"

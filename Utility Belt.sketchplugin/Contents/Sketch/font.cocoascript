@@ -18,7 +18,11 @@ var list_all_fonts = function(context) {
     }
   }
   foundFonts = UtilityBelt.array.arrayUnique(foundFonts);
-  foundFonts = foundFonts.sort();
-  var fontString = foundFonts.join("\n");
-  UtilityBelt.util.displayAlert('Fonts in Use',fontString);
+  if (foundFonts.length > 0) {
+    foundFonts = foundFonts.sort();
+    var fontString = foundFonts.join("\n");
+    UtilityBelt.util.displayAlert('Fonts in Use',fontString);
+  } else {
+    UtilityBelt.util.displayAlert('Fonts in Use','No fonts used in this document.');
+  }
 };

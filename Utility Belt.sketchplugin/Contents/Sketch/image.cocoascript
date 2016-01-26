@@ -28,14 +28,16 @@ var url_to_image_fill = function(context) {
 
   var url = UtilityBelt.util.displayPrompt(doc,"Enter image URL:","");
 
-  if ([selection count] > 0) {
-    var loop = [selection objectEnumerator];
-    while (layer = [loop nextObject]) {
-      var layerClass = [layer className];
-      if (layerClass == "MSShapeGroup") {
-        UtilityBelt.image.setImageURLasFill(layer,url);
+  if (url) {
+    if ([selection count] > 0) {
+      var loop = [selection objectEnumerator];
+      while (layer = [loop nextObject]) {
+        var layerClass = [layer className];
+        if (layerClass == "MSShapeGroup") {
+          UtilityBelt.image.setImageURLasFill(layer,url);
+        }
       }
+      UtilityBelt.util.reloadInspector(doc);
     }
-    UtilityBelt.util.reloadInspector(doc);
   }
 };

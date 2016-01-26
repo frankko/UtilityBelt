@@ -34,6 +34,8 @@ var selected_to_center_guides = function(context) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
 
+      log(frame);
+
       var guideCH = frame.origin.y + (frame.size.height / 2);
       UtilityBelt.guide.addGuide(artboard,'h',guideCH);
 
@@ -52,6 +54,8 @@ var selected_to_center_guides_horizontal = function(context) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
 
+      log(frame);
+
       var guideCH = frame.origin.y + (frame.size.height / 2);
       UtilityBelt.guide.addGuide(artboard,'h',guideCH);
     }
@@ -66,6 +70,8 @@ var selected_to_center_guides_vertical = function(context) {
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
+
+      log(frame);
 
       var guideCV = frame.origin.x + (frame.size.width / 2);
       UtilityBelt.guide.addGuide(artboard,'v',guideCV);
@@ -83,6 +89,8 @@ var selected_to_guides = function(context) {
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
+
+      log(frame);
 
       var guideT = frame.origin.y
       UtilityBelt.guide.addGuide(artboard,'h',guideT);
@@ -106,6 +114,8 @@ var selected_to_guides_horizontal = function(context) {
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
+      log(frame);
+
       var guideT = frame.origin.y
       UtilityBelt.guide.addGuide(artboard,'h',guideT);
       var guideB = frame.origin.y + frame.size.height
@@ -123,6 +133,8 @@ var selected_to_guides_vertical = function(context) {
     while (obj = [loop nextObject]) {
       var artboard = UtilityBelt.artboard.getCurrentArtboard(obj,page);
       var frame = [obj frameInArtboard];
+      log(frame);
+
       var guideL = frame.origin.x
       UtilityBelt.guide.addGuide(artboard,'v',guideL);
       var guideR = frame.origin.x + frame.size.width
