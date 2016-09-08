@@ -64,9 +64,8 @@ var UtilityBelt = {
     },
     "setImageAsFill": function(layer,img) {
       var fill = layer.style().fills().firstObject();
-//      var coll = layer.style().fills().firstObject().documentData().images();
-//      [fill setPatternImage:img collection:coll];
-      [fill setPatternImage:img];
+			var newImage = [[MSImageData alloc] initWithImage:img convertColorSpace:false]];
+      [fill setImage:newImage];
       [fill setFillType:4];
       [fill setPatternFillType:1];
     },

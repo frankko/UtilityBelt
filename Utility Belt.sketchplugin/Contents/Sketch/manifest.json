@@ -86,6 +86,13 @@
       "identifier" : "UBguide-newguideatx"
     },
     {
+      "script" : "info.cocoascript",
+      "handler" : "selected_info",
+      "shortcut" : "ctrl cmd option i",
+      "name" : "Get Info on Selected Layers",
+      "identifier" : "UBInfo-selectedinfo"
+    },
+    {
       "script" : "move.cocoascript",
       "handler" : "move_selected_to_x_y",
       "shortcut" : "",
@@ -95,7 +102,7 @@
     {
       "script" : "select.cocoascript",
       "handler" : "select_layers_by_name",
-      "shortcut" : "",
+      "shortcut" : "control option command f",
       "name" : "Select Layers by Name",
       "identifier" : "UBSelect-selectlayersbyname"
     },
@@ -105,6 +112,13 @@
       "shortcut" : "",
       "name" : "Select Layers by Font Name",
       "identifier" : "UBSelect-selectlayersbyfontname"
+    },
+    {
+      "script" : "select.cocoascript",
+      "handler" : "select_similar_text_layers",
+      "shortcut" : "",
+      "name" : "Select Similar Text Layers",
+      "identifier" : "UBSelect-selectsimilartextlayers"
     },
     {
       "script" : "select.cocoascript",
@@ -152,6 +166,12 @@
       },
       {
         "items": [
+          "UBInfo-selectedinfo"
+        ],
+        "title": "Info"
+      },
+      {
+        "items": [
           "UBMove-moveselectedtoxy"
         ],
         "title": "Move"
@@ -160,6 +180,7 @@
         "items": [
           "UBSelect-selectlayersbyname",
           "UBSelect-selectlayersbyfontname",
+          "UBSelect-selectsimilartextlayers",
           "UBSelect-selectsimilarcolorborder",
           "UBSelect-selectsimilarcolorfill"
         ],
@@ -169,8 +190,8 @@
     "title" : "★ Utility Belt"
   },
   "identifier" : "io.kolo.sketch.utility-belt",
-  "compatibleVersion": "3.3",
-  "version" : "1.0",
+  "compatibleVersion": "39",
+  "version" : "1.39.1",
   "description" : "An always-expanding collection of small, simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"

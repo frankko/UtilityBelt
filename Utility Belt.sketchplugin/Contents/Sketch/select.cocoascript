@@ -18,6 +18,41 @@ var select_layers_by_font_name = function(context) {
   }
 };
 
+var select_similar_text_layers = function(context) {
+  var doc = context.document;
+  var selection = context.selection;
+  var page = [doc currentPage];
+
+  if ([selection count] > 0) {
+    var selectedLayer = [selection objectAtIndex:0];
+    var selectedFontName = [selectedLayer fontPostscriptName];
+    var selectedFontSize = [selectedLayer fontSize];
+    var selectedTextColor = [selectedLayer textColor];
+    var selectedTextColorString = selectedTextColor.hexValue();
+
+    var scope = [page children];
+    var predicate = NSPredicate.predicateWithFormat("className == %@","MSTextLayer");
+    var queryResult = scope.filteredArrayUsingPredicate(predicate);
+    if ([queryResult count] > 0) {
+      doc.currentPage().deselectAllLayers();
+      var loop = [queryResult objectEnumerator];
+      while (layer = [loop nextObject]) {
+        var thisFontName = [layer fontPostscriptName];
+        var thisFontSize = [layer fontSize];
+        var thisTextColor = [layer textColor];
+        var thisTextColorString = thisTextColor.hexValue();
+
+        if ((thisFontName == selectedFontName) && (thisFontSize == selectedFontSize) && (thisTextColorString == selectedTextColorString)) {
+//          log(layer);
+          layer.select_byExpandingSelection(true,true);
+        }
+      }
+    }
+  } else {
+    UtilityBelt.util.displayAlert('Select Similar Text Layers','Select one text layer then try again.');
+  }
+};
+
 var select_layers_by_name = function(context) {
   var doc = context.document;
   var selection = context.selection;

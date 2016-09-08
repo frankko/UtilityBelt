@@ -1,0 +1,46 @@
+@import "_utilitybelt.js"
+
+var selected_info = function(context) {
+  var doc = context.document;
+  var page = [doc currentPage];
+  var selection = context.selection;
+
+  if ([selection count] > 0) {
+    var minX, minY;
+    var layersRect = UtilityBelt.layer.getRect(selection);
+
+    var allLeft = [],
+        allTop = [],
+        allRight = [],
+        allBottom = [];
+
+    var loop = [selection objectEnumerator];
+    while (layer = [loop nextObject]) {
+      var frameInArtboard = [layer frameInArtboard];
+      var layerX = parseFloat(frameInArtboard.origin.x);
+      var layerY = parseFloat(frameInArtboard.origin.y);
+      var layerR = parseFloat(layerX + frameInArtboard.size.width);
+      var layerB = parseFloat(layerY + frameInArtboard.size.height);
+
+      allLeft.push(layerX);
+      allTop.push(layerY);
+      allRight.push(layerR);
+      allBottom.push(layerB);
+    }
+
+    allLeft.sort(function(a,b){return a-b});
+    allTop.sort(function(a,b){return a-b});
+    allRight.sort(function(a,b){return b-a});
+    allBottom.sort(function(a,b){return b-a});
+
+    var totalWidth = allRight[0] - allLeft[0];
+    var totalHeight = allBottom[0] - allTop[0];
+
+    var text = "X: " + allLeft[0] + "\n";
+    text += "Y: " + allTop[0] + "\n";
+    text += "W: " + totalWidth + "\n";
+    text += "H: " + totalHeight;
+
+    UtilityBelt.util.displayAlert("Selected Info",text);
+  }
+};
