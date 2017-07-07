@@ -1,6 +1,6 @@
 # ★ Utility Belt
 
-An always-expanding collection of small, simple, focused plugins for Sketch 3.3+.
+An always-expanding collection of small, simple, focused plugins for Sketch 45+.
 
 ## Font →
 
@@ -8,15 +8,15 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3+
 
 ## Guide →
 
-* `New Horizontal Guide at…`: prompts you for a location to create a horizontal guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
-* `New Vertical Guide at…`: prompts you for a location to create a vertical guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
-* `Selected Layer to Guides (Horizontal)`: draws horizontal guides along the top and bottom edges of the selected object(s).
-* `Selected Layer to Guides (Vertical)`: draws vertical guides along the left and right edges of the selected object(s).
-* `Selected Layer to Guides (Both)`: draws both horizontal and vertical guides along all four sides of the selected object(s).
-* `Selected Layer to Center Guide (Horizontal)`: draws a horizontal guide at the vertical center point of the selected object(s).
-* `Selected Layer to Center Guide (Vertical)`: draws a vertical guide at the horizontal center point of the selected object(s).
-* `Selected Layer to Center Guide (Both)`: draws a horizontal and vertical guide at center point of the selected object(s).
-* `Remove Guides from Selected Artboard`: removes all guides from the selected artboard
+* **[Temporarily Disabled]** `New Horizontal Guide at…`: prompts you for a location to create a horizontal guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
+* **[Temporarily Disabled]** `New Vertical Guide at…`: prompts you for a location to create a vertical guide. (An object or an artboard must be selected so the plugin knows where to place the guide.)
+* **[Temporarily Disabled]** `Selected Layer to Guides (Horizontal)`: draws horizontal guides along the top and bottom edges of the selected object(s).
+* **[Temporarily Disabled]** `Selected Layer to Guides (Vertical)`: draws vertical guides along the left and right edges of the selected object(s).
+* **[Temporarily Disabled]** `Selected Layer to Guides (Both)`: draws both horizontal and vertical guides along all four sides of the selected object(s).
+* **[Temporarily Disabled]** `Selected Layer to Center Guide (Horizontal)`: draws a horizontal guide at the vertical center point of the selected object(s).
+* **[Temporarily Disabled]** `Selected Layer to Center Guide (Vertical)`: draws a vertical guide at the horizontal center point of the selected object(s).
+* **[Temporarily Disabled]** `Selected Layer to Center Guide (Both)`: draws a horizontal and vertical guide at center point of the selected object(s).
+* **[Temporarily Disabled]** `Remove Guides from Selected Artboard`: removes all guides from the selected artboard
 
 ## Image →
 
@@ -26,7 +26,7 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3+
 
 ## Info →
 
-* `Get Info on Selected Layers`: pops an alert box containing the cumulative x, y, width, and height of the selected layers.
+* **[Temporarily Disabled]** `Get Info on Selected Layers`: pops an alert box containing the cumulative x, y, width, and height of the selected layers.
 
 ## Move →
 
@@ -36,14 +36,14 @@ An always-expanding collection of small, simple, focused plugins for Sketch 3.3+
 
 * `Select Layers by Name`: takes a user-inputted string and selects all artboards, layer groups, and/or layers that contain that string
 * `Select Layers by Font Name`: enter a font’s PostScript family name and this will select all text layers in the current page matching the inputted font (use `Font → List all Fonts` to get a list of all document fonts.)
-* `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
-* `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer
+* **[Temporarily Disabled]** `Select Similar Color Border`: finds layers with a border color matching the currently selected layer
+* **[Temporarily Disabled]** `Select Similar Color Fill`: finds layers with a fill color matching the currently selected layer
 
 * * * 
 
 ### Who?
 
-I’m Frank Kolodziej, a New York City-based freelance designer & developer. I am [available for hire](http://kolo.io/). I’m [@frankko](https://twitter.com/frankko) on Twitter.
+I’m Frank Kolodziej, a Wichita, KS-based freelance designer & developer. I am [available for hire](http://kolo.io/). I’m [@frankko](https://twitter.com/frankko) on Twitter.
 
 #### Other Plugins
 

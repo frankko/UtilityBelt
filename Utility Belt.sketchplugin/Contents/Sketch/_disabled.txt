@@ -1,0 +1,30 @@
+      {
+        "items": [
+          "UBguide-newguideaty",
+          "UBguide-newguideatx",
+          "UBguide-selectedtoguides",
+          "UBguide-selectedtoguideshorizontal",
+          "UBguide-selectedtoguidesvertical",
+          "UBguide-selectedtocenterguides",
+          "UBguide-selectedtocenterguideshorizontal",
+          "UBguide-selectedtocenterguidesvertical",
+          "UBguide-removeallguidesfromartboard"
+        ],
+        "title": "Guide"
+      },
+      {
+        "items": [
+          "UBInfo-selectedinfo"
+        ],
+        "title": "Info"
+      },
+      {
+        "items": [
+          "UBSelect-selectlayersbyname",
+          "UBSelect-selectlayersbyfontname",
+          "UBSelect-selectsimilartextlayers",
+          "UBSelect-selectsimilarcolorborder",
+          "UBSelect-selectsimilarcolorfill"
+        ],
+        "title": "Select"
+      }

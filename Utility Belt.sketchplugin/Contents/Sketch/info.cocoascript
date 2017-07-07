@@ -16,11 +16,20 @@ var selected_info = function(context) {
 
     var loop = [selection objectEnumerator];
     while (layer = [loop nextObject]) {
+      /*
       var frameInArtboard = [layer frameInArtboard];
       var layerX = parseFloat(frameInArtboard.origin.x);
       var layerY = parseFloat(frameInArtboard.origin.y);
       var layerR = parseFloat(layerX + frameInArtboard.size.width);
       var layerB = parseFloat(layerY + frameInArtboard.size.height);
+      */
+
+      var frameInArtboard = [layer absoluteRect];
+      var layerX = parseFloat(frameInArtboard.x());
+      var layerY = parseFloat(frameInArtboard.y());
+      var layerR = parseFloat(layerX + frameInArtboard.width());
+      var layerB = parseFloat(layerY + frameInArtboard.height());
+
 
       allLeft.push(layerX);
       allTop.push(layerY);

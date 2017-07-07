@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Utility Belt</title>
+    <link>https://raw.githubusercontent.com/frankko/UtilityBelt/master/appcast.xml</link>
+    <description>An always-expanding collection of simple, focused plugins for Sketch.</description>
+    <language>en</language>
+      <item>
+        <title>Version 1.45.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Support for Sketch 45's plugin auto-updating.</li>
+              <li>Updated some actions to work with Sketch 45.</li>
+              <li>Temporarily disabled some actions that don't work with Sketch 45.</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/UtilityBelt/archive/master.zip" sparkle:version="1.45.1" />
+      </item>
+ </channel>
+</rss>

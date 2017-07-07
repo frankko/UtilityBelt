@@ -12,8 +12,15 @@ var select_layers_by_font_name = function(context) {
     var queryResult = scope.filteredArrayUsingPredicate(predicate);
     log(queryResult);
     if ([queryResult count] > 0) {
-      [page deselectAllLayers];
-      [page selectLayers:queryResult];
+//      var sketchVersion = UtilityBelt.util.getSketchVersion(context);
+//      log(sketchVersion);
+//      if (sketchVersion >= 45) {
+        UtilityBelt.select.deselectAllLayers(context);
+        UtilityBelt.select.selectLayers(queryResult);
+//      } else {
+//        [page deselectAllLayers];
+//        [page selectLayers:queryResult];
+//      }
     }
   }
 };
@@ -28,19 +35,19 @@ var select_similar_text_layers = function(context) {
     var selectedFontName = [selectedLayer fontPostscriptName];
     var selectedFontSize = [selectedLayer fontSize];
     var selectedTextColor = [selectedLayer textColor];
-    var selectedTextColorString = selectedTextColor.hexValue();
+    var selectedTextColorString = selectedTextColor.immutableModelObject().hexValue();
 
     var scope = [page children];
     var predicate = NSPredicate.predicateWithFormat("className == %@","MSTextLayer");
     var queryResult = scope.filteredArrayUsingPredicate(predicate);
     if ([queryResult count] > 0) {
-      doc.currentPage().deselectAllLayers();
+      UtilityBelt.select.deselectAllLayers(context);
       var loop = [queryResult objectEnumerator];
       while (layer = [loop nextObject]) {
         var thisFontName = [layer fontPostscriptName];
         var thisFontSize = [layer fontSize];
         var thisTextColor = [layer textColor];
-        var thisTextColorString = thisTextColor.hexValue();
+        var thisTextColorString = thisTextColor.immutableModelObject().hexValue();
 
         if ((thisFontName == selectedFontName) && (thisFontSize == selectedFontSize) && (thisTextColorString == selectedTextColorString)) {
 //          log(layer);
@@ -93,8 +100,15 @@ var select_layers_by_name = function(context) {
     }
 
     if (matchedLayers.length > 0) {
-      [page deselectAllLayers];
-      [page selectLayers:matchedLayers];
+//      var sketchVersion = UtilityBelt.util.getSketchVersion(context);
+//      log(sketchVersion);
+//      if (sketchVersion >= 45) {
+        UtilityBelt.select.deselectAllLayers(context);
+        UtilityBelt.select.selectLayers(matchedLayers);
+//      } else {
+//        [page deselectAllLayers];
+//        [page selectLayers:matchedLayers];
+//      }
     }
   }
 };
@@ -123,7 +137,9 @@ var select_similar_color_fill = function(context) {
     if ([selected className] == "MSTextLayer") {
       var hexValue = [[selected textColor] hexValue];
     } else {
-      var hexValue = [[[[selected style] fill] color] hexValue];
+//      UtilityBelt.util.dumpObj(selected);
+//      var hexValue = [[[[selected style] fill] color] hexValue];
+      var hexValue = selected.style().fills().firstObject().color().immutableModelObject().hexValue();
     }
   } else {
     var hexValue = UtilityBelt.util.displayPrompt(doc,"Enter a hex value…","");

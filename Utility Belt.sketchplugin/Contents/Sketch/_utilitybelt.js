@@ -141,14 +141,25 @@ var UtilityBelt = {
     }
   },
   "select": {
+    "deselectAllLayers": function(context) {
+      if(context.selection.count()) {
+        context.selection.firstObject().select_byExtendingSelection(false, false);
+      }
+    },
+    "selectLayers": function(matchedLayers) {
+      for (var x = 0; x < matchedLayers.length; x++) {
+        var layer = matchedLayers[x];
+        layer.select_byExtendingSelection(true,true);
+      }
+    },
     "selectSimilarColorBorder": function(context,target,hexValue) {
       var doc = context.document;
       var scope = [target children];
-      var predicate = NSPredicate.predicateWithFormat("style.border.color.hexValue == %@",hexValue);
+      var predicate = NSPredicate.predicateWithFormat("style.border.color.immutableModelObject.hexValue == %@",hexValue);
       var queryResult = scope.filteredArrayUsingPredicate(predicate);
 
       if ([queryResult count] > 1) {
-        [[doc currentPage] deselectAllLayers];
+        // [[doc currentPage] deselectAllLayers];
         [target selectLayers:queryResult];
       } else {
         UtilityBelt.util.displayMessage(doc,"No similar layers (border color) found.");
@@ -157,11 +168,11 @@ var UtilityBelt = {
     "selectSimilarColorFill": function(context,target,hexValue) {
       var doc = context.document;
       var scope = [target children];
-      var predicate = NSPredicate.predicateWithFormat("style.fill.color.hexValue == %@",hexValue);
+      var predicate = NSPredicate.predicateWithFormat("style.fill.color.immutableModelObject.hexValue == %@",hexValue);
       var queryResult = scope.filteredArrayUsingPredicate(predicate);
 
       if ([queryResult count] > 1) {
-        [[doc currentPage] deselectAllLayers];
+        // [[doc currentPage] deselectAllLayers];
         [target selectLayers:queryResult];
       } else {
         UtilityBelt.util.displayMessage(doc,"No similar layers (fill color) found.");
@@ -208,6 +219,10 @@ var UtilityBelt = {
 
       log("obj.treeAsDictionary():")
       log(obj.treeAsDictionary())
+    },
+    "getSketchVersion": function(context) {
+      var sketch = context.api();
+      return sketch.version;
     },
     "reloadInspector": function(doc) {
       [doc reloadInspector];

@@ -1,4 +1,5 @@
 {
+  "appcast": "https://raw.githubusercontent.com/frankko/UtilityBelt/master/appcast.xml",
 	"author" : "Frank Kolodziej",
   "commands" : [
     {
@@ -152,26 +153,6 @@
       },
       {
         "items": [
-          "UBguide-newguideaty",
-          "UBguide-newguideatx",
-          "UBguide-selectedtoguides",
-          "UBguide-selectedtoguideshorizontal",
-          "UBguide-selectedtoguidesvertical",
-          "UBguide-selectedtocenterguides",
-          "UBguide-selectedtocenterguideshorizontal",
-          "UBguide-selectedtocenterguidesvertical",
-          "UBguide-removeallguidesfromartboard"
-        ],
-        "title": "Guide"
-      },
-      {
-        "items": [
-          "UBInfo-selectedinfo"
-        ],
-        "title": "Info"
-      },
-      {
-        "items": [
           "UBMove-moveselectedtoxy"
         ],
         "title": "Move"
@@ -180,9 +161,7 @@
         "items": [
           "UBSelect-selectlayersbyname",
           "UBSelect-selectlayersbyfontname",
-          "UBSelect-selectsimilartextlayers",
-          "UBSelect-selectsimilarcolorborder",
-          "UBSelect-selectsimilarcolorfill"
+          "UBSelect-selectsimilartextlayers"
         ],
         "title": "Select"
       }
@@ -190,8 +169,8 @@
     "title" : "★ Utility Belt"
   },
   "identifier" : "io.kolo.sketch.utility-belt",
-  "compatibleVersion": "39",
-  "version" : "1.39.1",
+  "compatibleVersion": "45",
+  "version" : "1.45.1",
   "description" : "An always-expanding collection of small, simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"
