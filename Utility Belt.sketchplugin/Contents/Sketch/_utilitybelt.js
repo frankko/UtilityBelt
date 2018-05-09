@@ -64,7 +64,11 @@ var UtilityBelt = {
     },
     "setImageAsFill": function(layer,img) {
       var fill = layer.style().fills().firstObject();
-			var newImage = [[MSImageData alloc] initWithImage:img convertColorSpace:false]];
+      if (MSApplicationMetadata.metadata().appVersion < 47) {
+        var newImage = [[MSImageData alloc] initWithImage:img convertColorSpace:false]];
+      } else {
+        var newImage = [[MSImageData alloc] initWithImage:img]];
+      }
       [fill setImage:newImage];
       [fill setFillType:4];
       [fill setPatternFillType:1];

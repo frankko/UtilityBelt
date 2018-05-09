@@ -136,6 +136,7 @@
       "identifier" : "UBSelect-selectsimilarcolorfill"
     }
   ],
+  "icon": "utility-belt.png",
   "menu" : {
     "items" : [
       {
@@ -169,8 +170,8 @@
     "title" : "★ Utility Belt"
   },
   "identifier" : "io.kolo.sketch.utility-belt",
-  "compatibleVersion": "45",
-  "version" : "1.45.1",
+  "compatibleVersion": "48",
+  "version" : "1.50.0",
   "description" : "An always-expanding collection of small, simple, focused plugins for Sketch.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Utility Belt"

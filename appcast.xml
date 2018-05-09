@@ -6,6 +6,17 @@
     <description>An always-expanding collection of simple, focused plugins for Sketch.</description>
     <language>en</language>
       <item>
+        <title>Version 1.50.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>updates for Sketch 50.</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/UtilityBelt/archive/master.zip" sparkle:version="1.50.0" />
+      </item>
+      <item>
         <title>Version 1.45.1</title>
         <description>
           <![CDATA[
@@ -16,7 +27,7 @@
             </ul>
           ]]>
         </description>
-        <enclosure url="https://github.com/frankko/UtilityBelt/archive/master.zip" sparkle:version="1.45.1" />
+        <enclosure url="https://github.com/frankko/UtilityBelt/archive/bd65f9f745c453c4cecdd38b93a70f0c0b51a729.zip" sparkle:version="1.45.1" />
       </item>
  </channel>
 </rss>
